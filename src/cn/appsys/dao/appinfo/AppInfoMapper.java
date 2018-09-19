@@ -2,6 +2,8 @@ package cn.appsys.dao.appinfo;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import cn.appsys.pojo.AppInfo;
 import cn.appsys.pojo.QueryAppInfoVO;
 
@@ -19,5 +21,14 @@ public interface AppInfoMapper {
 	 * @return
 	 */
 	List<AppInfo> getAppInfoList(QueryAppInfoVO queryAppInfoVO);
+
+	AppInfo getAppInfo(@Param("id")Integer id, @Param("APKName")String APKName);
+
+	/**
+	 * 添加app基础信息
+	 * @param appInfo
+	 * @return
+	 */
+	int add(AppInfo appInfo);
 
 }

@@ -15,6 +15,11 @@ import cn.appsys.util.PageBean;
 public class AppInfoServiceImpl implements AppInfoService {
 	@Resource
 	private AppInfoMapper appInfoMapper;
+	
+	@Override
+	public AppInfo getAppInfo(Integer id, String APKName) {
+		return appInfoMapper.getAppInfo(id,APKName);
+	}
 
 	@Override
 	public void getAppInfoList(PageBean<AppInfo> pageBean, QueryAppInfoVO queryAppInfoVO) {
@@ -26,4 +31,15 @@ public class AppInfoServiceImpl implements AppInfoService {
 		List<AppInfo> result = appInfoMapper.getAppInfoList(queryAppInfoVO);
 		pageBean.setResult(result);
 	}
+
+	@Override
+	public boolean add(AppInfo appInfo) {
+		boolean flag = false;
+		if(appInfoMapper.add(appInfo)>0) {
+			flag = true;
+		}
+		return flag;
+	}
+
+	
 }

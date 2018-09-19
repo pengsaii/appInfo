@@ -13,4 +13,13 @@ public interface AppInfoService {
 	 */
 	void getAppInfoList(PageBean<AppInfo> pageBean, QueryAppInfoVO queryAppInfoVO);
 
+	AppInfo getAppInfo(Integer id, String APKName);
+
+	/**
+	 * 添加
+	 * @param appInfo
+	 * @return
+	 */
+	boolean add(AppInfo appInfo);
+
 }
