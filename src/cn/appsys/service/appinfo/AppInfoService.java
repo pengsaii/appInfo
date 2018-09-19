@@ -22,4 +22,18 @@ public interface AppInfoService {
 	 */
 	boolean add(AppInfo appInfo);
 
+	/**
+	 * 删除logo图片
+	 * @param parseInt
+	 * @return
+	 */
+	boolean deleteAppLogo(Integer id);
+
+	/**
+	 * 修改app信息
+	 * @param appInfo
+	 * @return
+	 */
+	boolean modify(AppInfo appInfo);
+
 }

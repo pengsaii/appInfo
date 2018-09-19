@@ -41,5 +41,23 @@ public class AppInfoServiceImpl implements AppInfoService {
 		return flag;
 	}
 
+	@Override
+	public boolean deleteAppLogo(Integer id) {
+		boolean flag = false;
+		if(appInfoMapper.deleAppLogo(id) > 0) {
+			flag = true;
+		}
+		return flag;
+	}
+
+	@Override
+	public boolean modify(AppInfo appInfo) {
+		boolean flag = false;
+		if(appInfoMapper.modify(appInfo) > 0) {
+			flag = true;
+		}
+		return flag;
+	}
+
 	
 }

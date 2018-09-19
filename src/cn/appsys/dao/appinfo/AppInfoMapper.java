@@ -31,4 +31,16 @@ public interface AppInfoMapper {
 	 */
 	int add(AppInfo appInfo);
 
+	/**
+	 * 删除logo图片
+	 * @param id
+	 * @return
+	 */
+	int deleAppLogo(@Param("id")Integer id);
+
+	/*
+	 * 修改信息
+	 */
+	int modify(AppInfo appInfo);
+
 }
