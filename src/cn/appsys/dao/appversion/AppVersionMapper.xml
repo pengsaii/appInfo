@@ -12,4 +12,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			from app_version v
 				where  appId = #{id}
 	</select>
+
+	<select id="getAppVersionById">
+		select * from app_version where id = #{id}
+	</select>
+	<!-- int deleteApkFile(@Param("id")Integer id); -->
+	<update id="deleteApkFile">
+		update app_version
+			set apkLocPath=null,downloadLink=null,apkFileName=null
+			where id = #{id}
+	</update>
+
 </mapper>

@@ -15,4 +15,27 @@ public interface AppInfoService {
 
 	AppInfo getAppInfoById(int id);
 
+	AppInfo getAppInfo(Integer id, String APKName);
+
+	/**
+	 * 添加
+	 * @param appInfo
+	 * @return
+	 */
+	boolean add(AppInfo appInfo);
+
+	/**
+	 * 删除logo图片
+	 * @param parseInt
+	 * @return
+	 */
+	boolean deleteAppLogo(Integer id);
+
+	/**
+	 * 修改app信息
+	 * @param appInfo
+	 * @return
+	 */
+	boolean modify(AppInfo appInfo);
+
 }
