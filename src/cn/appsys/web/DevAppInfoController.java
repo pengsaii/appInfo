@@ -25,6 +25,7 @@ import com.mysql.jdbc.StringUtils;
 
 import cn.appsys.pojo.AppCategory;
 import cn.appsys.pojo.AppInfo;
+import cn.appsys.pojo.AppVersion;
 import cn.appsys.pojo.DataDictionary;
 import cn.appsys.pojo.DevUser;
 import cn.appsys.pojo.QueryAppInfoVO;
@@ -46,6 +47,17 @@ public class DevAppInfoController {
 	@Resource
 	private AppVersionService appVersionService;
 	
+
+	@RequestMapping("appview/{id}")
+	public String examineAppInfo(Model model,@PathVariable int id) {
+		AppInfo appInfo = appInfoService.getAppInfoById(id);
+		List<AppVersion> appVersionList = appVersionService.getAppVersionById(id);
+		model.addAttribute("appInfo",appInfo);
+		model.addAttribute("appVersionList",appVersionList);
+		return "developer/appinfoview";
+	}
+	
+
 	/**
 	 * 保存修改后的appInfo
 	 * @param appInfo
@@ -193,6 +205,7 @@ public class DevAppInfoController {
 		List<DataDictionary> dataDictionary = dataDictionaryService.getDataDictionaryListByTypeCode(tcode);
 		return JSON.toJSONString(dataDictionary);
 	}
+
 	
 	/**
 	 * 三级联动 分类查询

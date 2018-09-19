@@ -1,5 +1,6 @@
 package cn.appsys.service.appversion;
 
+import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -14,6 +15,10 @@ public class AppVersionServiceImpl implements AppVersionService {
 	private AppVersionMapper appVersionMapper;
 	
 	@Override
+	public List<AppVersion> getAppVersionById(int id) {
+		return appVersionMapper.getAppVersionById(id);
+	}
+
 	public AppVersion getAppVersionById(Integer id) {
 		return appVersionMapper.getAppVersionById(id);
 	}

@@ -71,7 +71,7 @@
           <div class="item form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12"  for="select">所属平台 <span class="required">*</span></label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input type="hidden" value="${appInfo.flatformId}" id="fid" />
+              <input type="hidden" value="${appInfo.flatformName}" id="fid" />
               <select name="flatformId" id="flatformId" class="form-control" required="required"></select>
             </div>
           </div>

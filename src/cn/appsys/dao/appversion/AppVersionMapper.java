@@ -1,10 +1,14 @@
 package cn.appsys.dao.appversion;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 import cn.appsys.pojo.AppVersion;
 
 public interface AppVersionMapper {
+
+	List<AppVersion> getAppVersionById(int id);
 
 	/**
 	 * 根据id获取AppVersion
@@ -19,5 +23,6 @@ public interface AppVersionMapper {
 	 * @return
 	 */
 	int deleteApkFile(@Param("id")Integer id);
+
 
 }

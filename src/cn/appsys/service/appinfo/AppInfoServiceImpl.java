@@ -33,6 +33,11 @@ public class AppInfoServiceImpl implements AppInfoService {
 	}
 
 	@Override
+	public AppInfo getAppInfoById(int id) {
+		
+		return appInfoMapper.getAppInfoById(id);
+	}
+
 	public boolean add(AppInfo appInfo) {
 		boolean flag = false;
 		if(appInfoMapper.add(appInfo)>0) {
@@ -59,5 +64,4 @@ public class AppInfoServiceImpl implements AppInfoService {
 		return flag;
 	}
 
-	
 }

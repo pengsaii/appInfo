@@ -1,8 +1,15 @@
 package cn.appsys.service.appversion;
 
+
+import java.util.List;
+
+
 import cn.appsys.pojo.AppVersion;
 
 public interface AppVersionService {
+
+
+	List<AppVersion> getAppVersionById(int id);
 
 	/**
 	 * 根据id获取AppVersion
@@ -17,5 +24,6 @@ public interface AppVersionService {
 	 * @return
 	 */
 	boolean deleteApkFile(Integer id);
+
 
 }

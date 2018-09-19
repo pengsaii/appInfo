@@ -22,6 +22,9 @@ public interface AppInfoMapper {
 	 */
 	List<AppInfo> getAppInfoList(QueryAppInfoVO queryAppInfoVO);
 
+
+	AppInfo getAppInfoById(int id);
+
 	AppInfo getAppInfo(@Param("id")Integer id, @Param("APKName")String APKName);
 
 	/**
@@ -42,5 +45,6 @@ public interface AppInfoMapper {
 	 * 修改信息
 	 */
 	int modify(AppInfo appInfo);
+
 
 }
