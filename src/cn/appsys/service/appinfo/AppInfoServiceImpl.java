@@ -26,4 +26,11 @@ public class AppInfoServiceImpl implements AppInfoService {
 		List<AppInfo> result = appInfoMapper.getAppInfoList(queryAppInfoVO);
 		pageBean.setResult(result);
 	}
+
+	@Override
+	public AppInfo getAppInfoById(int id) {
+		
+		return appInfoMapper.getAppInfoById(id);
+	}
+
 }

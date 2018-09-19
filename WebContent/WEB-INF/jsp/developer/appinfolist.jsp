@@ -202,7 +202,7 @@
 											statusname="${appInfo.statusName }"											
 											data-toggle="tooltip" data-placement="top" title="" data-original-title="修改APP最新版本信息">修改版本</a>
                         </li>
-                        <li><a  class="modifyAppInfo" 
+                        <li><a  class="modifyAppInfo" <%-- href="${pageContext.request.contextPath}/dev/app/appinfomodify" --%>
 											appinfoid="${appInfo.id }" status="${appInfo.status }" statusname="${appInfo.statusName }"
 											data-toggle="tooltip" data-placement="top" title="" data-original-title="修改APP基础信息">修改</a></li>
                         <li><a  class="viewApp" appinfoid=${appInfo.id }  data-toggle="tooltip" data-placement="top" title="" data-original-title="查看APP基础信息以及全部版本信息">查看</a></li>

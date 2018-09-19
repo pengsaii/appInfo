@@ -15,10 +15,12 @@ import com.alibaba.fastjson.JSON;
 
 import cn.appsys.pojo.AppCategory;
 import cn.appsys.pojo.AppInfo;
+import cn.appsys.pojo.AppVersion;
 import cn.appsys.pojo.DataDictionary;
 import cn.appsys.pojo.QueryAppInfoVO;
 import cn.appsys.service.appcategory.AppCategoryService;
 import cn.appsys.service.appinfo.AppInfoService;
+import cn.appsys.service.appversion.AppVersionService;
 import cn.appsys.service.dataDictionary.DataDictionaryService;
 import cn.appsys.util.PageBean;
 
@@ -31,6 +33,18 @@ public class DevAppInfoController {
 	private DataDictionaryService dataDictionaryService;
 	@Resource
 	private AppCategoryService appCategoryService;
+	@Resource
+	private AppVersionService appVersionService;
+	
+	@RequestMapping("appview/{id}")
+	public String examineAppInfo(Model model,@PathVariable int id) {
+		AppInfo appInfo = appInfoService.getAppInfoById(id);
+		List<AppVersion> appVersionList = appVersionService.getAppVersionById(id);
+		model.addAttribute("appInfo",appInfo);
+		model.addAttribute("appVersionList",appVersionList);
+		return "developer/appinfoview";
+	}
+	
 	
 	/**
 	 * 三级联动 分类查询

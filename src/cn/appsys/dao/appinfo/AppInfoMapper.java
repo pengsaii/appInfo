@@ -20,4 +20,6 @@ public interface AppInfoMapper {
 	 */
 	List<AppInfo> getAppInfoList(QueryAppInfoVO queryAppInfoVO);
 
+	AppInfo getAppInfoById(int id);
+
 }

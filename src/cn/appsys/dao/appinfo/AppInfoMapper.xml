@@ -3,6 +3,20 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.appsys.dao.appinfo.AppInfoMapper">
+
+	<!-- AppInfo getAppInfoById(int id,Integer appId); -->
+	<select id="getAppInfoById" resultType="AppInfo">
+		select 
+		i.* ,
+		(select d.valueName from data_dictionary d where d.valueId = i.status and d.typeCode = 'APP_STATUS') as statusName,
+		(select d.valueName from data_dictionary d where d.valueId = i.flatformId and d.typeCode = 'APP_FLATFORM') as flatformName,
+		(select c.categoryName from app_category c where c.id = i.categoryLevel1) as categoryLevel1Name,
+		(select c.categoryName from app_category c where c.id = i.categoryLevel2) as categoryLevel2Name,
+		(select c.categoryName from app_category c where c.id = i.categoryLevel3) as categoryLevel3Name
+			from app_info i
+				where i.id = #{id}
+	</select>
+	
 	<!-- int getAppInfoCount(QueryAppInfoVO queryAppInfoVO); -->
 	<select id="getAppInfoCount" resultType="_int" parameterType="queryAppInfoVO">
 		select count(1)
