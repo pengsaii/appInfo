@@ -144,7 +144,7 @@ public class DevAppInfoController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}else if(flag.equals("apk")){//删除apk文件（操作app_version）
+		}/*else if(flag.equals("apk")){//删除apk文件（操作app_version）
 			try {
 				fileLocPath = (appVersionService.getAppVersionById(Integer.parseInt(id))).getApkLocPath();
 				File file = new File(fileLocPath);
@@ -158,7 +158,7 @@ public class DevAppInfoController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
+		}*/
 		return JSON.toJSONString(resultMap);
 	}
 	

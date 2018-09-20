@@ -189,7 +189,7 @@
 										<td>${appInfo.downloads }</td>
 										<td>${appInfo.versionNo }</td>
 										<td>
-										
+								</c:forEach>	
 										
 										<div class="btn-group">
                       <button type="button" class="btn btn-danger">点击操作</button>
